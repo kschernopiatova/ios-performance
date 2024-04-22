@@ -203,7 +203,7 @@
             "uid": "${DS_INFLUXDB}"
           },
           "hide": false,
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         },
         {
@@ -212,7 +212,7 @@
             "uid": "${DS_INFLUXDB}"
           },
           "hide": false,
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn:(r) => r[\"element_name\"] != \"\")",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn:(r) => r[\"element_name\"] != \"\")",
           "refId": "B"
         }
       ],
@@ -410,7 +410,7 @@
             "uid": "${DS_INFLUXDB}"
           },
           "key": "Q-1011758b-10d5-4d6a-a0fe-504e562ec1e5-0",
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"display_cost\" or r[\"_field\"] == \"cpu_cost\" or r[\"_field\"] == \"appState_cost\" or r[\"_field\"] == \"gpu_cost\" or r[\"_field\"] == \"location_cost\" or r[\"_field\"] == \"networking_cost\" or r[\"_field\"] == \"thermalState_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"display_cost\" or r[\"_field\"] == \"cpu_cost\" or r[\"_field\"] == \"appState_cost\" or r[\"_field\"] == \"gpu_cost\" or r[\"_field\"] == \"location_cost\" or r[\"_field\"] == \"networking_cost\" or r[\"_field\"] == \"thermalState_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -472,7 +472,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"display_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"display_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -534,7 +534,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"cpu_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"cpu_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -596,7 +596,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"appState_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"appState_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -658,7 +658,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"gpu_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"gpu_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -720,7 +720,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"location_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"location_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -782,7 +782,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"networking_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"networking_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -844,7 +844,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"thermalState_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"thermalState_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])",
           "refId": "A"
         }
       ],
@@ -906,7 +906,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])\n  \n",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_cost\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])\n  \n",
           "refId": "A"
         }
       ],
@@ -1050,7 +1050,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         },
         {
@@ -1059,7 +1059,7 @@
             "uid": "${DS_INFLUXDB}"
           },
           "hide": false,
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn:(r) => r[\"element_name\"] != \"\")",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"total_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> filter(fn:(r) => r[\"element_name\"] != \"\")",
           "refId": "B"
         }
       ],
@@ -1264,7 +1264,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"appState_overhead\" or r[\"_field\"] == \"cpu_overhead\" or r[\"_field\"] == \"display_overhead\" or r[\"_field\"] == \"location_overhead\" or r[\"_field\"] == \"networking_overhead\" or r[\"_field\"] == \"gpu_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"appState_overhead\" or r[\"_field\"] == \"cpu_overhead\" or r[\"_field\"] == \"display_overhead\" or r[\"_field\"] == \"location_overhead\" or r[\"_field\"] == \"networking_overhead\" or r[\"_field\"] == \"gpu_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         }
       ],
@@ -1326,7 +1326,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"display_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"display_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         }
       ],
@@ -1388,7 +1388,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"cpu_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"cpu_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         }
       ],
@@ -1450,7 +1450,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"appState_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"appState_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         }
       ],
@@ -1512,7 +1512,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"gpu_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"gpu_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         }
       ],
@@ -1574,7 +1574,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"location_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"location_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])",
           "refId": "A"
         }
       ],
@@ -1636,7 +1636,7 @@
             "type": "influxdb",
             "uid": "${DS_INFLUXDB}"
           },
-          "query": "from(bucket: \"performance-carina\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"networking_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])\n",
+          "query": "from(bucket: \"performance\")\n  |> range(start: v.timeRangeStart, stop: v.timeRangeStop)\n  |> filter(fn: (r) => r[\"_measurement\"] == \"Energy\")\n  |> filter(fn: (r) => r[\"_field\"] == \"networking_overhead\")\n  |> filter(fn: (r) => r[\"device_name\"] == \"${device_name}\")\n  |> filter(fn: (r) => r[\"os_version\"] == \"${os_version}\")\n  |> filter(fn: (r) => r[\"flow_id\"] == \"${flow_id}\")\n  |> drop(columns:[\"element_name\", \"event_type\"])\n  |> sort(columns: [\"_time\"])\n",
           "refId": "A"
         }
       ],
@@ -1657,13 +1657,13 @@
           "type": "influxdb",
           "uid": "${DS_INFLUXDB}"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"platform_name\",\n    predicate: (r) => true,\n    start: -30d,\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"platform_name\",\n    predicate: (r) => true,\n    start: -30d,\n)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "platform_name",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"platform_name\",\n    predicate: (r) => true,\n    start: -30d,\n)",
+        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"platform_name\",\n    predicate: (r) => true,\n    start: -30d,\n)",
         "refresh": 1,
         "regex": "IOS",
         "skipUrlSync": false,
@@ -1676,13 +1676,13 @@
           "type": "influxdb",
           "uid": "${DS_INFLUXDB}"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"os_version\",\n    predicate: (r) => r[\"platform_name\"] == \"${platform_name}\",\n    start: -30d,\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"os_version\",\n    predicate: (r) => r[\"platform_name\"] == \"${platform_name}\",\n    start: -30d,\n)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "os_version",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"os_version\",\n    predicate: (r) => r[\"platform_name\"] == \"${platform_name}\",\n    start: -30d,\n)",
+        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"os_version\",\n    predicate: (r) => r[\"platform_name\"] == \"${platform_name}\",\n    start: -30d,\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1695,13 +1695,13 @@
           "type": "influxdb",
           "uid": "${DS_INFLUXDB}"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"device_name\",\n    predicate: (r) => r[\"os_version\"] == \"${os_version}\",\n    start: -30d,\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"device_name\",\n    predicate: (r) => r[\"os_version\"] == \"${os_version}\",\n    start: -30d,\n)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "device_name",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"device_name\",\n    predicate: (r) => r[\"os_version\"] == \"${os_version}\",\n    start: -30d,\n)",
+        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"device_name\",\n    predicate: (r) => r[\"os_version\"] == \"${os_version}\",\n    start: -30d,\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1714,13 +1714,13 @@
           "type": "influxdb",
           "uid": "${DS_INFLUXDB}"
         },
-        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"flow_id\",\n    predicate: (r) => r[\"device_name\"] == \"${device_name}\",\n    start: -30d,\n)",
+        "definition": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"flow_id\",\n    predicate: (r) => r[\"device_name\"] == \"${device_name}\",\n    start: -30d,\n)",
         "hide": 0,
         "includeAll": false,
         "multi": false,
         "name": "flow_id",
         "options": [],
-        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance-carina\",\n    tag: \"flow_id\",\n    predicate: (r) => r[\"device_name\"] == \"${device_name}\",\n    start: -30d,\n)",
+        "query": "import \"influxdata/influxdb/schema\"\n\nschema.tagValues(\n    bucket: \"performance\",\n    tag: \"flow_id\",\n    predicate: (r) => r[\"device_name\"] == \"${device_name}\",\n    start: -30d,\n)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
